@@ -25,9 +25,11 @@ function query($sql, $params = []){
     $que->execute();
     return $que;
 }
-
-
-
+function select($sql, $params = []){
+    $que = query($sql, $params);
+    $que->setFetchMode(PDO::FETCH_ASSOC);
+    return $que->fetchAll();
+}
 function update($sql, $params =[]){
     $que = query($sql, $params);
     return $que->rowCount();
