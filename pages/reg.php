@@ -9,3 +9,4 @@ session_start()
     <input type="password" name="password_repeat" placeholder="Повторите пароль:"><br>
     <input type="submit" value="Зарегистрироваться">
 </form>
+<a href="./auth.php">Авторизация</a>

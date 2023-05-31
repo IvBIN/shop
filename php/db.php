@@ -7,7 +7,7 @@ const DB_PASSWORD = '';
 
 function db_connect(){
     $pdo = new PDO(
-        DB_PROVIDER.':host='.DB_HOST.';dbname'.DB_BASENAME,
+        DB_PROVIDER.':host='.DB_HOST.';dbname='.DB_BASENAME,
         DB_USERNAME,
         DB_PASSWORD
     );

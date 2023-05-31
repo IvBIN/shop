@@ -11,7 +11,7 @@ session_start();
     <title>Главная</title>
 </head>
 <body>
-    <?php var_dump($_SESSION['user_id']);?>
+    <?php require './moduls/header.php';?>
 
 </body>
 </html>
