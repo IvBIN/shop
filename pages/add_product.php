@@ -12,6 +12,7 @@ session_start();
     <title>Добавление товара</title>
 </head>
     <body>
+        <span onclick="history.back()">Назад</span>
         <form action="../php/add_product.php" method="post" enctype="multipart/form-data">
             <input type="text" name="title" placeholder="Название товара:" required>
             <textarea name="desc" id="" cols="40" rows="15" placeholder="Напишите описание" required></textarea>
@@ -27,7 +28,6 @@ session_start();
                 justify-content: center;
                 align-items: center;
                 gap: 15px;
-
             }
             textarea {
 

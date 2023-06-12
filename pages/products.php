@@ -1,3 +1,9 @@
+<?php
+session_start();
+require '../php/db.php';
+$products = select('SELECT * FROM products');
+
+?>
 <!doctype html>
 <html lang="ru">
     <head>
@@ -13,19 +19,19 @@
         <?php require '../moduls/header.php'?>
 
         <div class="container">
-            <div class="item">
-                <img src="" alt="">
-                <h3>Title</h3>
-                <p>Description Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet consequatur cupiditate distinctio, expedita ipsum tempore!</p>
-                <div class="more">
-                    <span>Price</span>
-                    <a href="">Узнать больше</a>
+            <?php foreach ($products as $product): ?>
+                <div class="item">
+                    <img src="data:image/jpeg;base64,<?php echo $product['cover']?>" alt="">
+                    <h3><?php echo $product['title']?></h3>
+                    <p><?php echo $product['description']?></p>
+                    <div class="more">
+                        <span><?php echo $product['price']?></span>
+                        <a href="./item.php?id=<?php echo $product['id']?>">Узнать больше</a>
+                    </div>
                 </div>
-
-
-            </div>
+            <?php endforeach; ?>
 
         </div>
     </body>
-</html><?php
+</html>
 

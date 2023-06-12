@@ -5,7 +5,7 @@ $title = $_POST['title'];
 $desc = $_POST['desc'];
 $price = $_POST['price'];
 $count = $_POST['count'];
-$cover = file_get_contents($_FILES['cover'] ['tmp_name']);
+$cover = file_get_contents($_FILES['cover']['tmp_name']);
 
 insert(
     'INSERT INTO products (title, description, price, count, cover)
