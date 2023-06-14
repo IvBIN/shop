@@ -22,7 +22,11 @@
                             echo './pages/profile.php?id='.$_SESSION['user_id'];
                         endif;
                     else:
-                        echo './pages/auth.php?id='.$_SESSION['user_id'];
+                        if ($_SERVER['REQUEST_URI'] !='/'):
+                        echo './auth.php';
+                        else:
+                            echo './pages/auth.php';
+                        endif;
                     endif;?>">
         П
     </a>
